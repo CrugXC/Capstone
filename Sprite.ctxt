@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Sprite()
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Sprite\r\n
+comment1.params=
+comment1.target=java.util.HashMap\ getAttrib()
+comment1.text=\r\n\ Used\ to\ retrieve\ attrib\ HashMap\r\n\ \r\n\ @return\ \ \ \ returns\ attribute\ HashMap\r\n
+comment2.params=g1\ x\ y
+comment2.target=void\ draw(java.awt.Graphics2D,\ int,\ int)
+numComments=3

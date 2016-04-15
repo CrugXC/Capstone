@@ -37,7 +37,7 @@ public class ButtonPanel extends JPanel
         shopBttn = new JButton("Shop");
         
         
-        bttnLayout = new GridLayout(3, 2, 30, 30);
+        bttnLayout = new GridLayout(3, 2, 20, 20);
         this.setLayout(bttnLayout);
         
         this.add(spellBttn);

@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 /**
  * Write a description of class OverlordFrame here.
  * 
@@ -19,10 +20,19 @@ public class OverlordFrame extends JFrame
         buttonPanel = new ButtonPanel();
         
         
-        this.setLayout(new BorderLayout());
+        this.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
         
-        this.add(buttonPanel, BorderLayout.SOUTH);
-        this.setSize(1920, 1080);
+
+        c.fill = GridBagConstraints.BOTH;
+        c.ipady = 5;
+        c.weightx = 0.0;
+        c.gridwidth = 3;
+        c.gridx = 3;
+        c.gridy = 3;
+        this.add(buttonPanel, c);
+        
+        this.setSize(960, 540);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
