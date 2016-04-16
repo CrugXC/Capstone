@@ -10,9 +10,11 @@ import java.awt.Graphics2D;
  */
 public class Sprite
 {
-    /**  */
+    /** String name     Item's name
+        HashMap attrib  HashMap containing strength, dexterity, constitution, intelligence, wisdom, and charisma integers
+        Image img       Sprite's image*/
     private String name;
-    private HashMap attrib;
+    private HashMap<String, Integer> attrib;
     private Image img;
 
     /**
@@ -27,7 +29,7 @@ public class Sprite
      * 
      * @return    returns attribute HashMap
      */
-    public HashMap getAttrib()
+    public HashMap<String, Integer> getAttrib()
     {
         return attrib;
     }

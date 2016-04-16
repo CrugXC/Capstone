@@ -1,6 +1,7 @@
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
+import java.util.HashMap;
 
 /**
  * Write a description of class PlayerStatsPanel here.
@@ -30,12 +31,13 @@ public class PlayerStatsPanel extends JPanel
      */
     public PlayerStatsPanel(InventoryPanel inv)
     {
-        strength = new JLabel("Strength: " + inv.getStrength);
-        dexterity = new JLabel("Dexterity: " + inv.getDexterity);
-        constitution = new JLabel("Constitution: " + inv.getConstitution);
-        intelligence = new JLabel("Intelligence: " + inv.getIntelligence);
-        wisdom = new JLabel("Wisdom: " + inv.getWisdom);
-        charisma = new JLabel("Charisma: " + inv.getCharisma);
+        HashMap<String, Integer> attrib = new HashMap<>();
+        strength = new JLabel("Strength: " + attrib.get("strength"));
+        dexterity = new JLabel("Dexterity: " + attrib.get("dexterity"));
+        constitution = new JLabel("Constitution: " + attrib.get("constitution"));
+        intelligence = new JLabel("Intelligence: " + attrib.get("intelligence"));
+        wisdom = new JLabel("Wisdom: " + attrib.get("wisdom"));
+        charisma = new JLabel("Charisma: " + attrib.get("charisma"));
         
         statLayout = new GridLayout(3, 2, 10, 10);
         this.setLayout(statLayout);
@@ -48,21 +50,6 @@ public class PlayerStatsPanel extends JPanel
         this.add(charisma);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x+y;
-    }
+
 
 }
