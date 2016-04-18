@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=InvSlot()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ InvSlot\r\n
+comment1.params=g
+comment1.target=void\ paintComponent(java.awt.Graphics)
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ Graphics\ g\ \ \ \ \ \ \ draws\ lines\r\n\ \ \ \ \ \ \ \ \ boolean\ active\ \ \ whether\ InvSlot\ is\ selected\ or\ not\r\n\r\n
+comment2.params=
+comment2.target=Sprite\ getItem()
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n@return\ \ \ \ \ returns\ Sprite\ item
+numComments=3

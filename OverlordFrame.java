@@ -27,54 +27,44 @@ public class OverlordFrame extends JFrame
         statPanel = new PlayerStatsPanel(invPanel);
         monstPanel = new MonsterPanel();
         
-        this.setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
         
-        c.ipadx = 10;
-        c.ipady = 50;
-        //c.fill = GridBagConstraints.BOTH;
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
         
+        gbc.ipadx = 100;
+        gbc.ipady = 100;
         
-        c.gridx = 0;
-        c.gridy = 0;
-        c.weightx = .1;
-        c.weighty = .4;
-        c.gridheight = 2;
-        c.fill = GridBagConstraints.VERTICAL;
-        c.anchor = GridBagConstraints.LINE_START;
-        this.add(invPanel, c);
-        
-        
-        c.gridx = 1;
-        c.gridy = 1;
-        c.weightx = .4;
-        c.weighty = .3;
-        c.gridwidth = 2;
-        c.gridheight = 0;
-        c.fill = GridBagConstraints.NONE;
-        c.anchor = GridBagConstraints.CENTER;
-        this.add(buttonPanel, c);
-        
-        
-        c.gridx = 2;
-        c.gridy = 0;
-        c.weightx = .1;
-        c.weighty = .4;
-        c.gridwidth = 0;
-        c.anchor = GridBagConstraints.LINE_END;
-        this.add(statPanel, c);
-        
-        
-        c.gridx = 1;
-        c.weightx = .4;
-        c.weighty = .4;
-        c.anchor = GridBagConstraints.CENTER;
-        this.add(monstPanel, c);
-        
-        
-        this.setSize(1920, 1080);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridheight = 2;
+        gbc.weightx = 0.3;
+        gbc.weighty = 1;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(invPanel, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridheight = 1;
+        gbc.weightx = 0.4;
+        gbc.weighty = 0.5;
+        add(monstPanel, gbc);
+
+        gbc.gridx = 2;
+        gbc.weightx = 0.1;
+        add(statPanel, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        gbc.weightx = 0.7;
+        gbc.weighty = 0.5;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(buttonPanel, gbc);
+    
+       
+         this.setSize(1440, 810);
+         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         this.setVisible(true);
     }
 
     /**

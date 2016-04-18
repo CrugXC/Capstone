@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.awt.geom.Point2D;
+import java.awt.geom.Line2D;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Dimension;
 import java.awt.Color;
@@ -15,39 +19,37 @@ import javax.swing.JPanel;
 public class InventoryPanel extends JPanel
 {
     /** ArrayList<JPanel> invSlots      linked to all JPanel inventory slots
-        ArrayList<Sprites> itemList     Sprites whose index value correlates to what slot they are stored in*/
+        ArrayList<Sprites> sAttList     Sprites whose index value correlates to what slot they are stored in*/
         
-    private ArrayList<JPanel> invSlots;
-    private ArrayList<Sprite> itemList;
+    private InvSlot[][] invHolder;
     
     private GridLayout invLayout;
     
+    int rows;
+    int cols;
     /**
      * Default constructor for objects of class InventoryPanel
      */
     public InventoryPanel()
     {
         //For loop taken from: http://stackoverflow.com/questions/2510159/can-i-add-a-component-to-a-specific-grid-cell-when-a-gridlayout-is-used
-        int i = 9;
-        int j = 5;
+        rows = 9;
+        cols = 5;
+
         
-        Dimension d = new Dimension(50,50);
+        invHolder = new InvSlot[rows][cols];
+        setLayout(new GridLayout(rows,cols, 5, 5));
         
-        JPanel[][] invHolder = new JPanel[i][j];
-        Sprite[][] itemHolder = new Sprite[i][j];
-        setLayout(new GridLayout(i,j));
-        
-        for(int m = 0; m < i; m++) {
-           for(int n = 0; n < j; n++) {
-              invHolder[m][n] = new JPanel();
-              invHolder[m][n].setBackground(Color.WHITE);
-              invHolder[m][n].setPreferredSize(d);
+        for(int m = 0; m < rows; m++) {
+           for(int n = 0; n < cols; n++) {
+              invHolder[m][n] = new InvSlot();
               add(invHolder[m][n]);
            }
         }
         
-        this.setPreferredSize(new Dimension(500, 250));
+        //this.setPreferredSize(new Dimension(500, 250));
     }
+    
 
     /**
      * @return    returns counted HashMap of all Sprite stats
@@ -68,17 +70,20 @@ public class InventoryPanel extends JPanel
         
         HashMap<String, Integer> sAtt;
         
-        for(Sprite s: itemList)
+        for(InvSlot[] s: invHolder)
         {
-            //iterates through items and counts their attributes
-            sAtt = s.getAttrib();
-            
-            totalAtt.put("strength", totalAtt.get("strength") + sAtt.get("strength"));
-            totalAtt.put("dexterity", totalAtt.get("dexterity") + sAtt.get("dexterity"));
-            totalAtt.put("constitution", totalAtt.get("constitution") + sAtt.get("constitution"));
-            totalAtt.put("intelligence", totalAtt.get("intelligence") + sAtt.get("intelligence"));
-            totalAtt.put("wisdom", totalAtt.get("wisdom") + sAtt.get("wisdom"));
-            totalAtt.put("charisma", totalAtt.get("charisma") + sAtt.get("charisma"));
+            for(InvSlot i: s)
+            {
+                //iterates through sAtts and counts their attributes
+                sAtt = i.getItem().getAttrib();
+                
+                totalAtt.put("strength", totalAtt.get("strength") + sAtt.get("strength"));
+                totalAtt.put("dexterity", totalAtt.get("dexterity") + sAtt.get("dexterity"));
+                totalAtt.put("constitution", totalAtt.get("constitution") + sAtt.get("constitution"));
+                totalAtt.put("intelligence", totalAtt.get("intelligence") + sAtt.get("intelligence"));
+                totalAtt.put("wisdom", totalAtt.get("wisdom") + sAtt.get("wisdom"));
+                totalAtt.put("charisma", totalAtt.get("charisma") + sAtt.get("charisma"));
+            }
         }
         
         return totalAtt;
