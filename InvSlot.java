@@ -15,14 +15,17 @@ public class InvSlot extends JPanel
 {
     private Sprite item;
     private Dimension dim;
+    private boolean active;
     /**
      * Constructor for objects of class InvSlot
      */
     public InvSlot()
     {
-        dim = new Dimension(50, 50);
+        active = false;
+        dim = new Dimension(75, 75);
         this.setBackground(Color.WHITE);
         this.setPreferredSize(dim);
+        this.setMaximumSize(dim);
     }
     
     /**
@@ -34,16 +37,18 @@ public class InvSlot extends JPanel
      */
     public void paintComponent(Graphics g)
     {
+        super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(5));
         
-        //if(active){g2.setColor(Color.YELLOW);}
-        //else{g2.setColor(Color.BLACK);}
+        if(active){g2.setColor(Color.YELLOW);}
+        else{g2.setColor(Color.BLACK);}
         
-        g2.draw(new Line2D.Double(0, 0, 0, 50));
-        g2.draw(new Line2D.Double(0, 50, 50, 50));
-        g2.draw(new Line2D.Double(50, 50, 50, 0));
-        g2.draw(new Line2D.Double(50, 0, 0, 0));
+        g2.setStroke(new BasicStroke(5));
+        g2.draw(new Line2D.Double(0, 0, 0, 75));
+        g2.draw(new Line2D.Double(0, 76, 76, 76));
+        g2.draw(new Line2D.Double(72.5, 72.5, 72.5, 0));
+        g2.draw(new Line2D.Double(72.5, 0, 2.5, 0));
     }
 
     /**
@@ -53,5 +58,22 @@ public class InvSlot extends JPanel
     {
         return item;
     }
-
+    
+    /**
+     * @pre     active is set to false
+     * @post    active is set to true
+     */
+    public void activate()
+    {
+        active = true;
+    }
+    
+    /**
+     * @pre     active is set to true
+     * @post    active is set to false
+     */
+    public void deactivate()
+    {
+        active = false;
+    }
 }

@@ -9,6 +9,8 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 
 /**
  * Write a description of class InventoryPanel here.
@@ -49,7 +51,8 @@ public class InventoryPanel extends JPanel
         
         //this.setPreferredSize(new Dimension(500, 250));
     }
-    
+    
+
 
     /**
      * @return    returns counted HashMap of all Sprite stats
@@ -88,5 +91,28 @@ public class InventoryPanel extends JPanel
         
         return totalAtt;
     }
-
+    
+    
+    public class clickLister implements MouseListener
+    {
+        public void mouseClicked(MouseEvent e)
+        {
+        }
+        
+        public void mouseEntered(MouseEvent e)
+        {
+        }
+        
+        public void mouseExited(MouseEvent e)
+        {
+        }
+        
+        public void mousePressed(MouseEvent e)
+        {
+        }
+        
+        public void mouseReleased(MouseEvent e)
+        {
+        }
+    }
 }
