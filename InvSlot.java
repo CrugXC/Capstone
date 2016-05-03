@@ -13,7 +13,7 @@ import java.awt.BasicStroke;
  */
 public class InvSlot extends JPanel
 {
-    private Sprite item;
+    private ItemSprite item;
     private Dimension dim;
     private boolean active;
     /**
@@ -53,8 +53,8 @@ public class InvSlot extends JPanel
 
     /**
      * An example of a method - replace this comment with your own
-     * @return     returns Sprite item */
-    public Sprite getItem()
+     * @return     returns ItemSprite item */
+    public ItemSprite getItem()
     {
         return item;
     }

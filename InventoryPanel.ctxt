@@ -4,5 +4,5 @@ comment0.target=InventoryPanel()
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ InventoryPanel\r\n
 comment1.params=
 comment1.target=java.util.HashMap\ getAttrib()
-comment1.text=\r\n\ @return\ \ \ \ returns\ counted\ HashMap\ of\ all\ Sprite\ stats\r\n
+comment1.text=\r\n\ @return\ \ \ \ returns\ counted\ HashMap\ of\ all\ ItemSprite\ stats\r\n
 numComments=2

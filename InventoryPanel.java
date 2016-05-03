@@ -21,7 +21,7 @@ import java.awt.event.MouseEvent;
 public class InventoryPanel extends JPanel
 {
     /** ArrayList<JPanel> invSlots      linked to all JPanel inventory slots
-        ArrayList<Sprites> sAttList     Sprites whose index value correlates to what slot they are stored in*/
+        ArrayList<ItemSprites> sAttList     ItemSprites whose index value correlates to what slot they are stored in*/
         
     private InvSlot[][] invHolder;
     
@@ -55,7 +55,7 @@ public class InventoryPanel extends JPanel
 
 
     /**
-     * @return    returns counted HashMap of all Sprite stats
+     * @return    returns counted HashMap of all ItemSprite stats
      */
     public HashMap<String, Integer> getAttrib()
     {

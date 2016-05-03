@@ -20,6 +20,7 @@ public class MonsterPanel extends JPanel
         JButton action4             Link up to action4*/
         
     private JPanel monsterScreen;
+    private JPanel monsterInfo;
     private JPanel actionButtons;
     private JButton action1;
     private JButton action2;
