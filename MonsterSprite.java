@@ -18,9 +18,9 @@ public class MonsterSprite extends Sprite
     /**
      * Default constructor for objects of class Monster
      */
-    public MonsterSprite()
+    public MonsterSprite(Image img)
     {
-        
+        super(img);
     }
 
 

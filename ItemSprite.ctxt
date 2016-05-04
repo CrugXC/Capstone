@@ -1,8 +1,11 @@
 #BlueJ class context
-comment0.params=
-comment0.target=ItemSprite()
+comment0.params=n\ a\ img
+comment0.target=ItemSprite(java.lang.String,\ java.util.HashMap,\ java.awt.Image)
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ ItemSprite\r\n
 comment1.params=
 comment1.target=java.util.HashMap\ getAttrib()
 comment1.text=\r\n\ Used\ to\ retrieve\ attrib\ HashMap\r\n\ \r\n\ @return\ \ \ \ returns\ attribute\ HashMap\r\n
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment2.text=\r\n\ Used\ to\ retrieve\ attrib\ HashMap\r\n\ \r\n\ @return\ \ \ \ returns\ name\ of\ ItemSprite\r\n
+numComments=3

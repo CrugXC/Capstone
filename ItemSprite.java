@@ -19,8 +19,11 @@ public class ItemSprite extends Sprite
     /**
      * Default constructor for objects of class ItemSprite
      */
-    public ItemSprite()
+    public ItemSprite(String n, HashMap a, Image img)
     {
+        super(img);
+        name = n;
+        attrib = a;
     }
 
     /**
@@ -33,5 +36,13 @@ public class ItemSprite extends Sprite
         return attrib;
     }
     
-    
+    /**
+     * Used to retrieve attrib HashMap
+     * 
+     * @return    returns name of ItemSprite
+     */
+    public String getName()
+    {
+        return name;
+    }
 }

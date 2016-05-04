@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=d\ name\ attributes\ img
+comment0.target=Weapon(AttackType,\ java.lang.String,\ java.util.HashMap,\ java.awt.Image)
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Weapon\r\n
+numComments=1

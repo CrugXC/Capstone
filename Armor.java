@@ -5,19 +5,24 @@ import java.awt.Image;
  * Write a description of class Weapon here.
  * 
  * @author Jay Rixie
- * @version 5/4/16
+ * @version 5/5/16
  */
-public class Weapon extends ItemSprite
+public class Armor extends ItemSprite
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private AttackType damage;
+    private int armorClass;
 
     /**
      * Default constructor for objects of class Weapon
      */
-    public Weapon(AttackType d, String name, HashMap attributes, Image img)
+    public Armor(int ar,  String name,  HashMap attrib, Image img)
     {
-        super(name, attributes, img);
-        damage = d;
+        super(name, attrib, img);
+        armorClass = ar;
+    }
+    
+    public int getAC()
+    {
+        return armorClass;
     }
 }

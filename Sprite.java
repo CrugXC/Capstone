@@ -16,9 +16,9 @@ public class Sprite
     /**
      * Default constructor for objects of class Sprite
      */
-    public Sprite()
+    public Sprite(Image img)
     {
-        
+        this.img = img;
     }
 
     public void draw(Graphics2D g1, int x, int y)
