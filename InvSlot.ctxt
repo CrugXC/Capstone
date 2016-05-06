@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=InvSlot()
+comment0.params=importItem
+comment0.target=InvSlot(ItemSprite)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ InvSlot\r\n
 comment1.params=g
 comment1.target=void\ paintComponent(java.awt.Graphics)

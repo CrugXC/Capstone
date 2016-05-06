@@ -17,13 +17,15 @@ public class OverlordFrame extends JFrame
     private InventoryPanel invPanel;
     private PlayerStatsPanel statPanel;
     private MonsterPanel monstPanel;
+    private Player p;
     /**
      * Default constructor for objects of class OverlordFrame
      */
     public OverlordFrame()
     {
+        p = new Player();
         buttonPanel = new ButtonPanel();
-        invPanel = new InventoryPanel();
+        invPanel = new InventoryPanel(p.getInv());
         statPanel = new PlayerStatsPanel(invPanel);
         monstPanel = new MonsterPanel();
         

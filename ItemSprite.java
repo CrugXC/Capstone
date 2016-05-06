@@ -19,7 +19,7 @@ public class ItemSprite extends Sprite
     /**
      * Default constructor for objects of class ItemSprite
      */
-    public ItemSprite(String n, HashMap a, Image img)
+    public ItemSprite(String n, HashMap<String, Integer> a, Image img)
     {
         super(img);
         name = n;

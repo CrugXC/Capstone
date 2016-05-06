@@ -19,11 +19,15 @@ public class InvSlot extends JPanel
     /**
      * Constructor for objects of class InvSlot
      */
-    public InvSlot()
+    public InvSlot(ItemSprite importItem)
     {
         active = false;
-        dim = new Dimension(75, 75);
+        
+        importItem = item;
+       
         this.setBackground(Color.WHITE);
+        
+        dim = new Dimension(75, 75);
         this.setPreferredSize(dim);
         this.setMaximumSize(dim);
     }
