@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Line2D;
 import java.awt.BasicStroke;
+import java.awt.Point;
 /**
  * Write a description of class InvSlot here.
  * 
@@ -16,15 +17,17 @@ public class InvSlot extends JPanel
     private ItemSprite item;
     private Dimension dim;
     private boolean active;
+    private int space;
     /**
      * Constructor for objects of class InvSlot
      */
-    public InvSlot(ItemSprite importItem)
+    public InvSlot(ItemSprite importItem, int importSpace)
     {
-        active = false;
+        active = false;      
         
-        importItem = item;
-       
+        item = importItem;
+        space = importSpace;
+        
         this.setBackground(Color.WHITE);
         
         dim = new Dimension(75, 75);
@@ -63,6 +66,18 @@ public class InvSlot extends JPanel
         return item;
     }
     
+    public ItemSprite takeItem()
+    {
+        ItemSprite temp = item;
+        item = null;
+        return temp;
+    }
+    
+    public void addItem(ItemSprite importItem)
+    {
+        item = importItem; 
+    }
+    
     /**
      * @pre     active is set to false
      * @post    active is set to true
@@ -70,6 +85,7 @@ public class InvSlot extends JPanel
     public void activate()
     {
         active = true;
+        repaint();
     }
     
     /**
@@ -79,5 +95,11 @@ public class InvSlot extends JPanel
     public void deactivate()
     {
         active = false;
+        repaint();
+    }
+    
+    public boolean contains(int x, int y)
+    {
+        return super.contains(x, y);
     }
 }

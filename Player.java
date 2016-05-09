@@ -10,7 +10,8 @@ import java.util.HashMap;
 public class Player
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private Inventory inv;
+    private Inventory mainInv;
+    private Inventory topInv;
     private HashMap<String, Integer> attrib;
     
     private int level;
@@ -19,18 +20,20 @@ public class Player
     private int healthCurr;
     private int healthMax;
     
-    private Weapon weap;
+
     
     /**
      * Default constructor for objects of class Player
      */
     public Player()
     {
-        inv = new Inventory();
+        mainInv = new Inventory(8, 5);
+        topInv = new Inventory(1, 2);
         
-        attrib = inv.getAttrib();
+        topInv.addItem(new Weapon(new AttackType("Slash", new Range(1,3)), "Basic Wooden Sword", Inventory.hashMapInitializer(1,1,1,1,1,1), null), 0);
+        topInv.addItem(new Armor(5, "Basic Leather Armor", Inventory.hashMapInitializer(1,1,1,1,1,1), null), 1);
         
-        weap = (Weapon)inv.getItem(0);
+        attrib = topInv.getAttrib();
         
         
         level = 1;
@@ -86,13 +89,15 @@ public class Player
     
     public void update()
     {
-        weap = (Weapon)inv.getItem(0);
-        
-        
     }
     
-    public Inventory getInv()
+    public Inventory getMainInv()
     {
-        return inv;
+        return mainInv;
+    }
+    
+    public Inventory getTopInv()
+    {
+        return topInv;
     }
 }

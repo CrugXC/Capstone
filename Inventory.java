@@ -9,21 +9,21 @@ import java.util.HashMap;
 public class Inventory
 {
     // instance variables - replace the example below with your own
-    private ArrayList<ItemSprite> inv;
+    private ArrayList<InvSlot> inv;
 
     /**
      * Constructor for objects of class Inventory
      */
-    public Inventory()
+    public Inventory(int rows, int cols)
     {
-        inv = new ArrayList<ItemSprite>(45);
+        inv = new ArrayList<InvSlot>(rows * cols);
         
-        for(int i = 0; i < 45; i++)
+        int count = 0;
+        for(int i = 0; i < rows*cols; i++)
         {
-            inv.add(null);
+            inv.add(new InvSlot(null, count));
+            count++;
         }
-        inv.add(new Weapon(new AttackType("Slash", new Range(1,3)), "Basic Wooden Sword", this.hashMapInitializer(1,1,1,1,1,1), null));
-        
     }
     
     public static HashMap<String, Integer> hashMapInitializer(int str, int dex, int con, int intel, int wis, int cha)
@@ -59,13 +59,13 @@ public class Inventory
         
         HashMap<String, Integer> sAtt;
         
-        for(ItemSprite item: inv)
+        for(InvSlot slot: inv)
         {
             
             //iterates through sAtts and counts their attributes
-            if(item != null)
+            if(slot.getItem() != null)
             {
-                sAtt = item.getAttrib();
+                sAtt = slot.getItem().getAttrib();
                 
                 totalAtt.put("strength", totalAtt.get("strength") + sAtt.get("strength"));
                 totalAtt.put("dexterity", totalAtt.get("dexterity") + sAtt.get("dexterity"));
@@ -79,24 +79,33 @@ public class Inventory
         return totalAtt;
     }
     
-    public boolean addItem(ItemSprite item, int space)
+    public ItemSprite addItem(ItemSprite item, int space)
     {
-        if (inv.get(space) == null)
-        {  
-            inv.add(space, item);
-            return true;
-        }
+        ItemSprite temp = inv.get(space).takeItem();
         
-        return false;
+        inv.get(space).addItem(item);
+        
+        return temp;
     }
     
     public ItemSprite getItem(int space)
     {
+        return inv.get(space).getItem();
+    }
+    
+    public ItemSprite deleteItem(int space)
+    {
+        return inv.remove(space).takeItem();
+    }
+    
+    public InvSlot getSlot(int space)
+    {
         return inv.get(space);
     }
     
-    public void deleteItem(int space)
+    
+    public ArrayList<InvSlot> getList()
     {
-        inv.remove(space);
+        return inv;
     }
 }

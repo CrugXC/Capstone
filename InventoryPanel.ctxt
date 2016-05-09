@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=importInv
-comment0.target=InventoryPanel(Inventory)
+comment0.params=importTopInv\ importMainInv
+comment0.target=InventoryPanel(Inventory,\ Inventory)
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ InventoryPanel\r\n
 comment1.params=
 comment1.target=java.awt.Dimension\ getDim()
