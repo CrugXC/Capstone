@@ -80,7 +80,21 @@ public class InventoryPanel extends JPanel
         
         this.addMouseListener(new ClickListener());
     }
-   
+    
+    public ItemSprite getItem(String area, int space)
+    {
+        if(area.equals("top"))
+        {
+            return topInv.getItem(space);
+        }
+        else if(area.equals("main"))
+        {
+            return mainInv.getItem(space);
+        }
+        
+        return null;
+    }
+    
     public Dimension getDim()
     {
         return dim;

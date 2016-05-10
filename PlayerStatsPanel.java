@@ -65,6 +65,22 @@ public class PlayerStatsPanel extends JPanel
         this.add(charisma);
     }
 
-
+    public void update(Player p)
+    {
+        inv = p.getTopInv();
+        
+        health = new JLabel("Health: " + p.getCurrHealth() + "/" + p.getMaxHealth());
+        level = new JLabel("Level: " + p.getLevel());
+        xp = new JLabel("Experience: " + p.getXP());
+        
+        HashMap<String, Integer> attrib = inv.getAttrib();
+        System.out.println(attrib);
+        strength = new JLabel("Strength: " + attrib.get("strength"));
+        dexterity = new JLabel("Dexterity: " + attrib.get("dexterity"));
+        constitution = new JLabel("Constitution: " + attrib.get("constitution"));
+        intelligence = new JLabel("Intelligence: " + attrib.get("intelligence"));
+        wisdom = new JLabel("Wisdom: " + attrib.get("wisdom"));
+        charisma = new JLabel("Charisma: " + attrib.get("charisma"));
+    }
 
 }

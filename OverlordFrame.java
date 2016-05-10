@@ -68,12 +68,22 @@ public class OverlordFrame extends JFrame
          this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          this.setVisible(true);
     }
-
     
-    public static void main(String[] args)
+    public void update()
     {
-        //Creates DrawingEditor
+        statPanel.update(p);
+        System.out.println(invPanel.getItem("top", 0));
+    }
+    
+    public static void main(String[] args) throws InterruptedException
+    {
         OverlordFrame frame = new OverlordFrame();
+        
+        while(true)
+        {
+            frame.update();
+            Thread.sleep(1000);
+        }
     }
 
 }
