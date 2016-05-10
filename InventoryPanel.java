@@ -94,7 +94,7 @@ public class InventoryPanel extends JPanel
             {
                 for(InvSlot slot: topInv.getList())
                 {
-                    if(slot.contains(e.getX(), e.getY()) && !found)
+                    if(slot.contains(e.getX(), e.getY(), slot.getLocation()) && !found)
                     {
                         selected = slot;
                         found = true;
@@ -107,7 +107,7 @@ public class InventoryPanel extends JPanel
                 {
                     for(InvSlot slot: mainInv.getList())
                     {
-                        if(slot.contains(e.getX(), e.getY()) && !found)
+                        if(slot.contains(e.getX(), e.getY(), slot.getLocation()) && !found)
                         {
                             selected = slot;
                             found = true;
@@ -122,7 +122,7 @@ public class InventoryPanel extends JPanel
             {
                 for(InvSlot slot: topInv.getList())
                     {
-                        if(slot.contains(e.getX(), e.getY()) && !found)
+                        if(slot.contains(e.getX(), e.getY(), slot.getLocation()) && !found)
                         {
                             if(selected.getItem().getClass().equals("Weapon"))
                             {
@@ -139,7 +139,7 @@ public class InventoryPanel extends JPanel
                 {
                     for(InvSlot slot: mainInv.getList())
                     {
-                        if(slot.contains(e.getX(), e.getY()))
+                        if(slot.contains(e.getX(), e.getY(), slot.getLocation()))
                         {
                             ItemSprite item = selected.takeItem();
                             selected.addItem(slot.takeItem());

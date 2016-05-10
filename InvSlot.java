@@ -98,8 +98,8 @@ public class InvSlot extends JPanel
         repaint();
     }
     
-    public boolean contains(int x, int y)
+    public boolean contains(int x, int y, Point origin)
     {
-        return super.contains(x, y);
+        return ((x >= origin.getX() && x <= origin.getX() - this.getSize().getWidth()) && (y >= origin.getY() && y <= origin.getY() + this.getSize().getHeight()));
     }
 }
