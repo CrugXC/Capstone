@@ -25,4 +25,9 @@ public class Armor extends ItemSprite
     {
         return armorClass;
     }
+    
+    public String toString()
+    {
+        return "<html>Armor Name: " + this.getName() + " Armor Class: " + armorClass + "<br> Attributes: " + this.getAttrib() + "</html>";
+    }
 }

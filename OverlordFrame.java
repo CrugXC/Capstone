@@ -26,7 +26,7 @@ public class OverlordFrame extends JFrame
         p = new Player();
         buttonPanel = new ButtonPanel();
         invPanel = new InventoryPanel(p.getTopInv(), p.getMainInv());
-        statPanel = new PlayerStatsPanel(invPanel);
+        statPanel = new PlayerStatsPanel(p);
         monstPanel = new MonsterPanel();
         
         

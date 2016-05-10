@@ -1,5 +1,5 @@
 import java.util.HashMap;
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 
 /**
  * Write a description of class Weapon here.
@@ -15,9 +15,14 @@ public class Weapon extends ItemSprite
     /**
      * Default constructor for objects of class Weapon
      */
-    public Weapon(AttackType d, String name, HashMap attributes, Image img)
+    public Weapon(AttackType d, String name, HashMap attributes, BufferedImage img)
     {
         super(name, attributes, img);
         damage = d;
+    }
+    
+    public String toString()
+    {
+        return "<html>Weapon Name: " + this.getName() + " Attack: " + damage + "<br> Attributes: " + this.getAttrib() + "</html>";
     }
 }

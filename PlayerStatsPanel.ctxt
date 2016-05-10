@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.params=inv
-comment0.target=PlayerStatsPanel(InventoryPanel)
+comment0.params=p
+comment0.target=PlayerStatsPanel(Player)
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ PlayerStatsPanel\r\n
 numComments=1

@@ -25,20 +25,7 @@ public class Inventory
             count++;
         }
     }
-    
-    public static HashMap<String, Integer> hashMapInitializer(int str, int dex, int con, int intel, int wis, int cha)
-    {
-        HashMap<String, Integer> attrib = new HashMap<String, Integer>();
-        
-        attrib.put("strength", str);
-        attrib.put("dexterity", dex);
-        attrib.put("constitution", con);
-        attrib.put("intelligence", intel);
-        attrib.put("wisdom", wis);
-        attrib.put("charisma", cha);
-        
-        return attrib;
-    }
+
     
     /**
      * @return    returns counted HashMap of all ItemSprite stats

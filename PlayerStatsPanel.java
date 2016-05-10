@@ -17,7 +17,10 @@ public class PlayerStatsPanel extends JPanel
        JLabel intelligence      displays strength intelligence
        JLabel wisdom            displays wisdom number
        JLabel charisma          displays charisma number*/
-       
+    private JLabel health;   
+    private JLabel level;
+    private JLabel xp;
+    
     private JLabel strength;
     private JLabel dexterity;
     private JLabel constitution;
@@ -25,13 +28,21 @@ public class PlayerStatsPanel extends JPanel
     private JLabel wisdom;
     private JLabel charisma;
     
+    private Inventory inv;
+    
     private GridLayout statLayout;
     /**
      * Default constructor for objects of class PlayerStatsPanel
      */
-    public PlayerStatsPanel(InventoryPanel inv)
+    public PlayerStatsPanel(Player p)
     {
-        HashMap<String, Integer> attrib = new HashMap<>();
+        inv = p.getTopInv();
+        
+        health = new JLabel("Health: " + p.getCurrHealth() + "/" + p.getMaxHealth());
+        level = new JLabel("Level: " + p.getLevel());
+        xp = new JLabel("Experience: " + p.getXP());
+        
+        HashMap<String, Integer> attrib = inv.getAttrib();
         strength = new JLabel("Strength: " + attrib.get("strength"));
         dexterity = new JLabel("Dexterity: " + attrib.get("dexterity"));
         constitution = new JLabel("Constitution: " + attrib.get("constitution"));
@@ -41,6 +52,10 @@ public class PlayerStatsPanel extends JPanel
         
         statLayout = new GridLayout(3, 2, 10, 10);
         this.setLayout(statLayout);
+        
+        
+        this.add(health);
+        this.add(level);
         
         this.add(strength);
         this.add(dexterity);

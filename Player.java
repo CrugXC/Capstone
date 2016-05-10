@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.awt.Rectangle;
+import java.io.IOException;
 /**
  * Write a description of class Player here.
  * 
@@ -30,8 +34,19 @@ public class Player
         mainInv = new Inventory(8, 5);
         topInv = new Inventory(1, 2);
         
-        topInv.addItem(new Weapon(new AttackType("Slash", new Range(1,3)), "Basic Wooden Sword", Inventory.hashMapInitializer(1,1,1,1,1,1), null), 0);
-        topInv.addItem(new Armor(5, "Basic Leather Armor", Inventory.hashMapInitializer(1,1,1,1,1,1), null), 1);
+        
+        BufferedImage weaponImg = null;
+        try {
+            weaponImg = ImageIO.read(new File("LongSword.png"));
+        } catch (IOException e){}
+        
+        topInv.addItem(new Weapon(new AttackType("Slash", new Range(1,3)), "Basic Wooden Sword", Generator.hashMapInitializer(1,1,1,1,1,1), weaponImg), 0);
+        
+        BufferedImage armorImg = null;
+        try {
+            armorImg = ImageIO.read(new File("LeatherArmor.gif"));
+        } catch (IOException e){}
+        topInv.addItem(new Armor(5, "Basic Leather Armor", Generator.hashMapInitializer(1,1,1,1,1,1), armorImg), 1);
         
         attrib = topInv.getAttrib();
         
@@ -99,5 +114,25 @@ public class Player
     public Inventory getTopInv()
     {
         return topInv;
+    }
+    
+    public int getMaxHealth()
+    {
+        return healthMax;
+    }
+    
+    public int getCurrHealth()
+    {
+        return healthCurr;
+    }
+    
+    public int getLevel()
+    {
+        return level;
+    }
+    
+    public int getXP()
+    {
+        return xp;
     }
 }

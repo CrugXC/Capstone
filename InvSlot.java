@@ -35,6 +35,7 @@ public class InvSlot extends JPanel
         this.setMaximumSize(dim);
     }
     
+    
     /**
      * An example of a method - replace this comment with your own
      *
@@ -56,6 +57,11 @@ public class InvSlot extends JPanel
         g2.draw(new Line2D.Double(0, 76, 76, 76));
         g2.draw(new Line2D.Double(72.5, 72.5, 72.5, 0));
         g2.draw(new Line2D.Double(72.5, 0, 2.5, 0));
+        
+        if(item != null)
+        {
+            item.draw((Graphics2D)g, 15, 15);
+        }
     }
 
     /**
@@ -98,8 +104,13 @@ public class InvSlot extends JPanel
         repaint();
     }
     
-    public boolean contains(int x, int y, Point origin)
+    public boolean contains(int x, int y, Point origin, String sect)
     {
-        return ((x >= origin.getX() && x <= origin.getX() - this.getSize().getWidth()) && (y >= origin.getY() && y <= origin.getY() + this.getSize().getHeight()));
+        int yOffset = 0;
+        if(sect.equals("main"))
+        {
+            yOffset = 80;
+        }
+        return ((x >= origin.getX() && x <= origin.getX() + this.getSize().getWidth()) && (y >= origin.getY() + yOffset && y <= origin.getY() + this.getSize().getHeight() + yOffset));
     }
 }

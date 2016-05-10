@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=playerLevel
+comment0.target=Weapon\ generateWeapon(int)
+comment1.params=str\ dex\ con\ intel\ wis\ cha
+comment1.target=java.util.HashMap\ hashMapInitializer(int,\ int,\ int,\ int,\ int,\ int)
+comment2.params=
+comment2.target=java.lang.String\ attackNameGenerator()
+comment3.params=img\ rect
+comment3.target=java.awt.image.BufferedImage\ crop(java.awt.image.BufferedImage,\ java.awt.Rectangle)
+numComments=4

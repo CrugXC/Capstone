@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=importWeapon\ importSpace
+comment0.target=WeaponInvSlot(Weapon,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ WeaponInvSlot\r\n
+comment1.params=importWeapon
+comment1.target=void\ addItem(Weapon)
+comment2.params=
+comment2.target=Weapon\ getItem()
+numComments=3

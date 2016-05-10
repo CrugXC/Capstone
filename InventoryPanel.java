@@ -12,6 +12,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
+import javax.swing.JLabel;
 
 /**
  * Write a description of class InventoryPanel here.
@@ -34,6 +35,8 @@ public class InventoryPanel extends JPanel
     private Inventory mainInv;
     private Inventory topInv;
     
+    private JLabel itemStats;
+    
     int rows;
     int cols;
     /**
@@ -43,8 +46,8 @@ public class InventoryPanel extends JPanel
     {   
         mainInv = importMainInv;
         topInv = importTopInv;
-        
-        
+                
+        itemStats = new JLabel("");
                 
         //For loop taken from: http://stackoverflow.com/questions/2510159/can-i-add-a-component-to-a-specific-grid-cell-when-a-gridlayout-is-used
         rows = 8;
@@ -73,6 +76,7 @@ public class InventoryPanel extends JPanel
         
         this.add(topInvPanel, BorderLayout.NORTH);
         this.add(mainInvPanel, BorderLayout.CENTER);
+        this.add(itemStats, BorderLayout.SOUTH);
         
         this.addMouseListener(new ClickListener());
     }
@@ -88,15 +92,18 @@ public class InventoryPanel extends JPanel
         
         public void mouseClicked(MouseEvent e)
         {
-            System.out.println("Coordinates " + e.getX() + " " + e.getY());
+            
             boolean found = false;
             if(selected == null)
             {
                 for(InvSlot slot: topInv.getList())
                 {
-                    if(slot.contains(e.getX(), e.getY(), slot.getLocation()) && !found)
+                    System.out.println("Coordinates " + e.getX() + " " + e.getY());
+                    if(slot.contains(e.getX(), e.getY(), slot.getLocation(), "top") && !found)
                     {
                         selected = slot;
+                        if(selected.getItem() != null)
+                        {itemStats.setText(slot.getItem().toString());}
                         found = true;
                         slot.activate();
                         System.out.println("Found at Coordinates " + e.getX() + " " + e.getY());
@@ -107,9 +114,11 @@ public class InventoryPanel extends JPanel
                 {
                     for(InvSlot slot: mainInv.getList())
                     {
-                        if(slot.contains(e.getX(), e.getY(), slot.getLocation()) && !found)
+                        if(slot.contains(e.getX(), e.getY(), slot.getLocation(), "main") && !found)
                         {
                             selected = slot;
+                            if(selected.getItem() != null)
+                            {itemStats.setText(slot.getItem().toString());}
                             found = true;
                             slot.activate();
                             System.out.println("Found at Coordinates " + e.getX() + " " + e.getY());
@@ -122,16 +131,13 @@ public class InventoryPanel extends JPanel
             {
                 for(InvSlot slot: topInv.getList())
                     {
-                        if(slot.contains(e.getX(), e.getY(), slot.getLocation()) && !found)
+                        if(slot.contains(e.getX(), e.getY(), slot.getLocation(), "top") && !found)
                         {
-                            if(selected.getItem().getClass().equals("Weapon"))
-                            {
-                                ItemSprite item = selected.takeItem();
-                                selected.addItem(slot.takeItem());
-                                slot.addItem(item);
-                                
-                                found = true;
-                            }
+                            ItemSprite item = selected.takeItem();
+                            selected.addItem(slot.takeItem());
+                            slot.addItem(item);
+                            
+                            found = true;
                         }
                     }
                 
@@ -139,7 +145,7 @@ public class InventoryPanel extends JPanel
                 {
                     for(InvSlot slot: mainInv.getList())
                     {
-                        if(slot.contains(e.getX(), e.getY(), slot.getLocation()))
+                        if(slot.contains(e.getX(), e.getY(), slot.getLocation(), "main"))
                         {
                             ItemSprite item = selected.takeItem();
                             selected.addItem(slot.takeItem());
@@ -152,6 +158,7 @@ public class InventoryPanel extends JPanel
                 
                 selected.deactivate();
                 selected = null;
+                itemStats.setText("");
             }
         }
         

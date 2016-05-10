@@ -8,4 +8,6 @@ comment1.text=\r\n\ Used\ to\ retrieve\ attrib\ HashMap\r\n\ \r\n\ @return\ \ \ 
 comment2.params=
 comment2.target=java.lang.String\ getName()
 comment2.text=\r\n\ Used\ to\ retrieve\ attrib\ HashMap\r\n\ \r\n\ @return\ \ \ \ returns\ name\ of\ ItemSprite\r\n
-numComments=3
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

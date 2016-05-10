@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=importArmor\ importSpace
+comment0.target=ArmorInvSlot(Armor,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ ArmorInvSlot\r\n
+comment1.params=importArmor
+comment1.target=void\ addItem(Armor)
+comment2.params=
+comment2.target=Armor\ getItem()
+numComments=3
