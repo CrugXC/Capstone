@@ -27,7 +27,7 @@ public class OverlordFrame extends JFrame
         buttonPanel = new ButtonPanel();
         invPanel = new InventoryPanel(p.getTopInv(), p.getMainInv());
         statPanel = new PlayerStatsPanel(p);
-        monstPanel = new MonsterPanel();
+        monstPanel = new MonsterPanel(p);
         
         
         setLayout(new GridBagLayout());
@@ -64,7 +64,7 @@ public class OverlordFrame extends JFrame
         add(buttonPanel, gbc);
     
        
-         this.setSize(1440, 810);
+         this.setSize(1490, 830);
          this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          this.setVisible(true);
     }

@@ -15,7 +15,7 @@ public class Armor extends ItemSprite
     /**
      * Default constructor for objects of class Weapon
      */
-    public Armor(int ar,  String name,  HashMap attrib, Image img)
+    public Armor(int ar,  String name,  HashMap<String, Integer> attrib, Image img)
     {
         super(name, attrib, img);
         armorClass = ar;

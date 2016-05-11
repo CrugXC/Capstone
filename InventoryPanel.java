@@ -48,7 +48,7 @@ public class InventoryPanel extends JPanel
         topInv = importTopInv;
                 
         itemStats = new JLabel("");
-                
+
         //For loop taken from: http://stackoverflow.com/questions/2510159/can-i-add-a-component-to-a-specific-grid-cell-when-a-gridlayout-is-used
         rows = 8;
         cols = 5;

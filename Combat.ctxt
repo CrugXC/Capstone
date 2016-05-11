@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=p1
+comment0.target=Combat(Player)
+comment1.params=m1
+comment1.target=void\ startCombat(MonsterSprite)
+comment2.params=
+comment2.target=boolean\ isCombat()
+comment3.params=
+comment3.target=boolean\ getTurn()
+comment4.params=
+comment4.target=void\ attack()
+comment5.params=
+comment5.target=void\ run()
+comment6.params=
+comment6.target=void\ endCombat()
+numComments=7

@@ -15,7 +15,7 @@ public class Weapon extends ItemSprite
     /**
      * Default constructor for objects of class Weapon
      */
-    public Weapon(AttackType d, String name, HashMap attributes, BufferedImage img)
+    public Weapon(AttackType d, String name, HashMap<String, Integer> attributes, BufferedImage img)
     {
         super(name, attributes, img);
         damage = d;
@@ -24,5 +24,10 @@ public class Weapon extends ItemSprite
     public String toString()
     {
         return "<html>Weapon Name: " + this.getName() + " Attack: " + damage + "<br> Attributes: " + this.getAttrib() + "</html>";
+    }
+    
+    public int attack()
+    {
+        return damage.attack();
     }
 }

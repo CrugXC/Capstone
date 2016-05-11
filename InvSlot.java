@@ -76,6 +76,7 @@ public class InvSlot extends JPanel
     {
         ItemSprite temp = item;
         item = null;
+        repaint();
         return temp;
     }
     

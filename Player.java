@@ -102,8 +102,26 @@ public class Player
         return level;
     }
     
-    public void update()
+    public boolean takeDamage(int damage)
     {
+        healthCurr -= damage;
+        return healthCurr <= 0;
+    }
+    
+    public boolean dead()
+    {
+        return healthCurr <= 0;
+    }
+    
+    public void attack(MonsterSprite monster)
+    {
+        if(topInv.getItem(0) != null)
+        {
+            monster.takeDamage(topInv.getItem(0).attack());
+        }
+        else
+        {
+        }
     }
     
     public Inventory getMainInv()
@@ -134,5 +152,10 @@ public class Player
     public int getXP()
     {
         return xp;
+    }
+    
+    public HashMap<String, Integer> getAttrib()
+    {
+        return attrib;
     }
 }

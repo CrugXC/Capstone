@@ -45,6 +45,11 @@ public class ItemSprite extends Sprite
     {
         return name;
     }
+
+    public int attack()
+    {
+        return 0;
+    }
     
     public String toString(){return "";}
 }

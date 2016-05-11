@@ -4,4 +4,6 @@ comment0.target=Weapon(AttackType,\ java.lang.String,\ java.util.HashMap,\ java.
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Weapon\r\n
 comment1.params=
 comment1.target=java.lang.String\ toString()
-numComments=2
+comment2.params=
+comment2.target=int\ attack()
+numComments=3
