@@ -18,7 +18,7 @@ public class MonsterPanel extends JPanel
         JButton action3             Link up to action3
         JButton action4             Link up to action4*/
         
-    private JPanel monsterScreen;
+    private MonsterDisplay monsterScreen;
     private JPanel monsterInfo;
     private JPanel actionButtons;
     private JButton action1;
@@ -35,7 +35,7 @@ public class MonsterPanel extends JPanel
      */
     public MonsterPanel(Player p1)
     {
-        monsterScreen = new JPanel();
+        monsterScreen = new MonsterDisplay();
         monsterScreen.setPreferredSize(new Dimension(300, 300));
         monsterScreen.setBackground(Color.WHITE);
         
@@ -135,26 +135,19 @@ public class MonsterPanel extends JPanel
         {
             m = m1;
             combat.startCombat(m1);
+            monsterScreen.addMonster(m1);
             repaint();
         }
         
         public void deleteMonster()
         {
             m = null;
-            
+            monsterScreen.deleteMonster();
             repaint();
         }
         
         public void paintComponent(Graphics g)
         {
-            super.paintComponent(g);
-            System.out.println("test2");
-            if(m != null)
-            {
-                m.draw((Graphics2D)g, 100, 100);
-                System.out.println("test3");
-            }
-            
-            this.setBackground(Color.BLACK);
+            monsterScreen.repaint();
         }
 }
