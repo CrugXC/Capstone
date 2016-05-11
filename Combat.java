@@ -37,6 +37,8 @@ public class Combat
         m = m1;
         turn = p.getAttrib().get("dexterity") > m.getAttrib().get("dexterity");
         action = true;
+        
+        System.out.println("Combat Started");
     }
     
     public boolean isCombat()

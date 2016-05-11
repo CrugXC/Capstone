@@ -147,10 +147,14 @@ public class MonsterPanel extends JPanel
         
         public void paintComponent(Graphics g)
         {
+            super.paintComponent(g);
             System.out.println("test2");
             if(m != null)
             {
-                m.draw((Graphics2D)g, 20, 20);
+                m.draw((Graphics2D)g, 100, 100);
+                System.out.println("test3");
             }
+            
+            this.setBackground(Color.BLACK);
         }
 }
