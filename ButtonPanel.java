@@ -1,6 +1,7 @@
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import java.awt.GridLayout;
+import java.awt.*;
+import java.awt.event.*;
 
 /**
  * Used to contain buttons "Spells, Skills, Map, Explore, Rest, Shop" and hand their actions
@@ -24,17 +25,29 @@ public class ButtonPanel extends JPanel
     private JButton restBttn;
     private JButton shopBttn;
     private GridLayout bttnLayout;
+    
+    private MonsterPanel m;
     /**
      * Default constructor for objects of class ButtonPanel
      */
-    public ButtonPanel()
+    public ButtonPanel(MonsterPanel m1)
     {
+        ActionListener listener = new ClickListener();
         spellBttn = new JButton("Spells");
+        spellBttn.addActionListener(listener);
         skillsBttn = new JButton("Skills");
+        skillsBttn.addActionListener(listener);
         mapBttn = new JButton("Map");
+        mapBttn.addActionListener(listener);
         exploreBttn = new JButton("Explore");
+        exploreBttn.addActionListener(listener);
         restBttn = new JButton("Rest");
+        restBttn.addActionListener(listener);
         shopBttn = new JButton("Shop");
+        shopBttn.addActionListener(listener);
+        
+        
+        m = m1;
         
         
         bttnLayout = new GridLayout(2, 3, 20, 20);
@@ -48,20 +61,28 @@ public class ButtonPanel extends JPanel
         this.add(shopBttn);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
-     */
-    public void sampleMethod(int y)
+    public class ClickListener implements ActionListener
     {
-
+        public ClickListener()
+        { 
+        }
+        
+        public void actionPerformed(ActionEvent event)
+        {
+            //Determines which button was clicked and runs block
+            if (event.getActionCommand().equals("Explore"))
+            {
+                m.addMonster(Generator.generateMonster());
+                System.out.println("test");
+            }
+            
+            
+            else
+            {
+                //Double checking error
+                System.out.println("error");
+            }
+        }
     }
 
 }

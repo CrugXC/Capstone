@@ -3,6 +3,9 @@ import java.util.HashMap;
 import java.util.Random;
 import java.awt.image.BufferedImage;
 import java.awt.Rectangle;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 /**
 * Write a description of class WeaponGenerator here.
 * 
@@ -29,6 +32,14 @@ public class Generator
         attrib.put("charisma", cha);
         
         return attrib;
+    }
+    
+    public static HashMap<Integer, AttackType> attackHashMapInitializer(AttackType a1)
+    {
+        HashMap<Integer, AttackType> attacks = new HashMap<Integer, AttackType>();
+        attacks.put(1, a1);
+        
+        return attacks;
     }
     
     public static String attackNameGenerator()
@@ -66,5 +77,15 @@ public class Generator
     {
         //http://stackoverflow.com/questions/2386064/how-do-i-crop-an-image-in-java
         return img.getSubimage(0, 0, rect.width, rect.height);
+    }
+    
+    public static MonsterSprite generateMonster()
+    {
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(new File("goblin.png"));
+        } catch (IOException e){}
+        
+        return new MonsterSprite(img, "Goblin", hashMapInitializer(1,1,1,1,1,1), attackHashMapInitializer(new AttackType("Slash", new Range(1, 3))));
     }
 }

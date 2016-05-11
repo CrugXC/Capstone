@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=p1
-comment0.target=Combat(Player)
+comment0.params=p1\ mp1
+comment0.target=Combat(Player,\ MonsterPanel)
 comment1.params=m1
 comment1.target=void\ startCombat(MonsterSprite)
 comment2.params=

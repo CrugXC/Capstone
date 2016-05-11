@@ -20,6 +20,9 @@ public class MonsterSprite extends Sprite
     
     private Random r1;
     
+    private int healthCurr;
+    private int healthMax;
+    
     /**
      * Default constructor for objects of class Monster
      */

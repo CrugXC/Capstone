@@ -128,11 +128,13 @@ public class MonsterPanel extends JPanel
                 System.out.println("error");
             }
         }
-        
+    }
+    
+    
         public void addMonster(MonsterSprite m1)
         {
             m = m1;
-            
+            combat.startCombat(m1);
             repaint();
         }
         
@@ -145,10 +147,10 @@ public class MonsterPanel extends JPanel
         
         public void paintComponent(Graphics g)
         {
+            System.out.println("test2");
             if(m != null)
             {
                 m.draw((Graphics2D)g, 20, 20);
             }
         }
-    }
 }
