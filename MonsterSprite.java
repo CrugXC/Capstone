@@ -33,12 +33,13 @@ public class MonsterSprite extends Sprite
         info = stats;
         attacks = importAttacks;
         
+        healthCurr = 1 + info.get("constitution");
+        
         r1 = new Random();
     }
     
     public boolean takeDamage(int damage)
     {
-        int healthCurr = info.get("healthCurr");
         healthCurr -= damage;
         info.put("healthCurr", healthCurr);
         return healthCurr <= 0;
