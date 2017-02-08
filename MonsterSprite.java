@@ -53,7 +53,12 @@ public class MonsterSprite extends Sprite
     
     public void attack(Player p)
     {
-        p.takeDamage(attacks.get(r1.nextInt(info.size())).attack());
+        AttackType att = attacks.get(r1.nextInt(attacks.size()));
+        System.out.println("Attack Found " + att);
+        int damage = att.attack();
+        p.takeDamage(damage);
+        //p.takeDamage((attacks.get(r1.nextInt(info.size()))).attack());
+        System.out.println("Damage Taken - Player");
     }
     
     public HashMap<String, Integer> getAttrib()

@@ -31,4 +31,9 @@ public class AttackType
     {
         return name;
     }
+    
+    public String toString()
+    {
+        return name;
+    }
 }

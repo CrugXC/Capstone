@@ -65,6 +65,7 @@ public class Combat
             {
                 this.endCombat();
             }
+            turn = false;
         }
         else
         {
@@ -78,6 +79,7 @@ public class Combat
             {
                 this.endCombat();
             }
+            turn = true;
         }
     }
     

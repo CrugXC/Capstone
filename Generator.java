@@ -37,7 +37,7 @@ public class Generator
     public static HashMap<Integer, AttackType> attackHashMapInitializer(AttackType a1)
     {
         HashMap<Integer, AttackType> attacks = new HashMap<Integer, AttackType>();
-        attacks.put(1, a1);
+        attacks.put(0, a1);
         
         return attacks;
     }
