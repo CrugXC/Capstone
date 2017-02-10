@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.params=img
-comment0.target=Sprite(java.awt.Image)
+comment0.target=Sprite(java.awt.image.BufferedImage)
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Sprite\r\n
-comment1.params=g1\ x\ y
-comment1.target=void\ draw(java.awt.Graphics2D,\ int,\ int)
-numComments=2
+comment1.params=
+comment1.target=java.awt.image.BufferedImage\ getImage()
+comment2.params=g1\ x\ y
+comment2.target=void\ draw(java.awt.Graphics2D,\ int,\ int)
+numComments=3

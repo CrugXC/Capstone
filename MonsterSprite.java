@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.Random;
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 
 /**
@@ -26,7 +26,7 @@ public class MonsterSprite extends Sprite
     /**
      * Default constructor for objects of class Monster
      */
-    public MonsterSprite(Image img, String importName, HashMap<String, Integer> stats, HashMap<Integer, AttackType> importAttacks)
+    public MonsterSprite(BufferedImage img, String importName, HashMap<String, Integer> stats, HashMap<Integer, AttackType> importAttacks)
     {
         super(img);
         name = importName;

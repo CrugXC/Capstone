@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=img\ importName\ stats\ importAttacks
-comment0.target=MonsterSprite(java.awt.Image,\ java.lang.String,\ java.util.HashMap,\ java.util.HashMap)
+comment0.target=MonsterSprite(java.awt.image.BufferedImage,\ java.lang.String,\ java.util.HashMap,\ java.util.HashMap)
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Monster\r\n
 comment1.params=damage
 comment1.target=boolean\ takeDamage(int)

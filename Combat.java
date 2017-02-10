@@ -18,6 +18,8 @@ public class Combat
     
     private boolean action;
     
+    private boolean pDead;
+    
     private Random r1;
     
     public Combat(Player p1, MonsterPanel mp1)
@@ -26,6 +28,7 @@ public class Combat
         m = null;
         mp = mp1;
         
+        pDead = p1.dead();
         
         action = false;
         
@@ -97,9 +100,11 @@ public class Combat
         }
     }
     
-    public void endCombat()
+    public boolean endCombat()
     {
         action = false;
         mp.deleteMonster();
+        
+        return pDead;
     }
 }

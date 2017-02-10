@@ -1,5 +1,5 @@
 import java.util.HashMap;
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 
 /**
@@ -19,7 +19,7 @@ public class ItemSprite extends Sprite
     /**
      * Default constructor for objects of class ItemSprite
      */
-    public ItemSprite(String n, HashMap<String, Integer> a, Image img)
+    public ItemSprite(String n, HashMap<String, Integer> a, BufferedImage img)
     {
         super(img);
         name = n;

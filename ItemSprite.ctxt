@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=n\ a\ img
-comment0.target=ItemSprite(java.lang.String,\ java.util.HashMap,\ java.awt.Image)
+comment0.target=ItemSprite(java.lang.String,\ java.util.HashMap,\ java.awt.image.BufferedImage)
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ ItemSprite\r\n
 comment1.params=
 comment1.target=java.util.HashMap\ getAttrib()

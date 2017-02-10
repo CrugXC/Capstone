@@ -1,4 +1,4 @@
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 
 
@@ -11,16 +11,21 @@ import java.awt.Graphics2D;
 public class Sprite
 {
     /** Image img       ItemSprite's image */
-    private Image img;
+    private BufferedImage img;
 
     /**
      * Default constructor for objects of class Sprite
      */
-    public Sprite(Image img)
+    public Sprite(BufferedImage img)
     {
         this.img = img;
     }
-
+    
+    public BufferedImage getImage()
+    {
+        return img;
+    }
+    
     public void draw(Graphics2D g1, int x, int y)
     {
         g1.drawImage(img, x, y, null);

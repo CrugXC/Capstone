@@ -1,6 +1,7 @@
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 /**
  * Write a description of class MonsterDisplay here.
@@ -27,6 +28,11 @@ public class MonsterDisplay extends JPanel
         m = m1;
     }
     
+    public MonsterSprite getMonster()
+    {
+        return m;
+    }
+    
     public void deleteMonster()
     {
         m = null;
@@ -38,6 +44,7 @@ public class MonsterDisplay extends JPanel
             System.out.println("test2");
             if(m != null)
             {
+                Generator.crop(m.getImage(), new Rectangle(100, 100));
                 m.draw((Graphics2D)g, 100, 100);
                 System.out.println("test3");
             }
