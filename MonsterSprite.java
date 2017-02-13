@@ -33,9 +33,20 @@ public class MonsterSprite extends Sprite
         info = stats;
         attacks = importAttacks;
         
-        healthCurr = 1 + info.get("constitution");
+        healthMax = 1 + info.get("constitution");
         
+        healthCurr = healthMax;
         r1 = new Random();
+    }
+    
+    public int getHealthCurr()
+    {
+        return healthCurr;
+    }
+    
+    public int getHealthMax()
+    {
+        return healthMax;
     }
     
     public boolean takeDamage(int damage)

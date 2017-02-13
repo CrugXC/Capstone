@@ -2,6 +2,7 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.awt.event.*;
 /**
  * Write a description of class MonsterPanel here.
@@ -25,6 +26,7 @@ public class MonsterPanel extends JPanel
     private JButton action2;
     private JButton action3;
     private JButton action4;
+    private Rectangle2D.Double healthBar;
     
     private Combat combat;
     

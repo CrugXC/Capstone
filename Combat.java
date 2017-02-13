@@ -78,6 +78,7 @@ public class Combat
                 p.attack(m);
             }
             
+            
             else
             {
                 this.endCombat();
@@ -88,7 +89,7 @@ public class Combat
     
     public void run()
     {
-        if(r1.nextInt(100) > 60)
+        if(r1.nextInt(100) > 30)
         {
             this.endCombat();
         }
