@@ -85,6 +85,7 @@ public class Combat
             }
             turn = true;
         }
+        mp.update();
     }
     
     public void run()

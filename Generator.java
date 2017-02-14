@@ -83,7 +83,7 @@ public class Generator
     {
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("Trump.jpg"));
+            img = ImageIO.read(new File("Goblin.png"));
         } catch (IOException e){}
         
         return new MonsterSprite(img, "Goblin", hashMapInitializer(1,1,1,1,1,1), attackHashMapInitializer(new AttackType("Slash", new Range(1, 3))));

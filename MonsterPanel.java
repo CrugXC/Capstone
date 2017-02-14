@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.awt.event.*;
+
+
 /**
  * Write a description of class MonsterPanel here.
  * 
@@ -26,7 +28,8 @@ public class MonsterPanel extends JPanel
     private JButton action2;
     private JButton action3;
     private JButton action4;
-    private Rectangle2D.Double healthBar;
+    
+    
     
     private Combat combat;
     
@@ -67,6 +70,8 @@ public class MonsterPanel extends JPanel
         this.add(monsterInfo, BorderLayout.NORTH);
         this.add(monsterScreen, BorderLayout.CENTER);
         this.add(actionButtons, BorderLayout.SOUTH);
+        
+        
         
         p = p1;
         m = null;
@@ -138,6 +143,7 @@ public class MonsterPanel extends JPanel
             m = m1;
             combat.startCombat(m1);
             monsterScreen.addMonster(m1);
+            
             repaint();
         }
         
@@ -148,7 +154,13 @@ public class MonsterPanel extends JPanel
             repaint();
         }
         
-        public void paintComponent(Graphics g)
+        public void update()
+        {
+            monsterScreen.update();
+            repaint();
+        }
+        
+        public void paintComponent(Graphics2D g2)
         {
             monsterScreen.repaint();
         }
