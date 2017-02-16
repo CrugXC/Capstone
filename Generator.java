@@ -86,6 +86,6 @@ public class Generator
             img = ImageIO.read(new File("Goblin.png"));
         } catch (IOException e){}
         
-        return new MonsterSprite(img, "Goblin", hashMapInitializer(1,1,1,1,1,1), attackHashMapInitializer(new AttackType("Slash", new Range(1, 3))));
+        return new MonsterSprite(img, "Goblin", hashMapInitializer(1,1,10,1,1,1), attackHashMapInitializer(new AttackType("Slash", new Range(1, 3))));
     }
 }

@@ -49,7 +49,7 @@ public class Combat
         return action;
     }
     
-        public boolean getTurn()
+    public boolean getTurn()
     {
         return turn;
     }
@@ -64,7 +64,7 @@ public class Combat
                 m.attack(p);
             }
             
-            else
+            if(p.dead() || m.dead())
             {
                 this.endCombat();
             }
@@ -79,7 +79,7 @@ public class Combat
             }
             
             
-            else
+            if(m.dead() || p.dead())
             {
                 this.endCombat();
             }

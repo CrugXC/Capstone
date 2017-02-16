@@ -151,6 +151,13 @@ public class MonsterPanel extends JPanel
         {
             m = null;
             monsterScreen.deleteMonster();
+            
+            if(p.dead())
+            {
+                JOptionPane.showMessageDialog(null, "Game Over");
+                System.exit(0);
+            }
+            
             repaint();
         }
         

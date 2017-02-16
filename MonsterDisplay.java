@@ -50,11 +50,19 @@ public class MonsterDisplay extends JPanel
     
     public void update()
     {
-        healthBar.setRect(1, 1, (int)(((double)m.getHealthCurr()/ (double)m.getHealthMax()) * 100), 20);
-        System.out.println(m.getHealthCurr());
-        System.out.println(m.getHealthMax());
-        System.out.println((m.getHealthCurr()/ m.getHealthMax()) * 100);
-        System.out.println(m.getHealthCurr());
+        if(m!=null)
+        {
+            healthBar.setRect(1, 1, (int)(((double)m.getHealthCurr()/ (double)m.getHealthMax()) * 100), 20);
+            System.out.println(m.getHealthCurr());
+            System.out.println(m.getHealthMax());
+            System.out.println((m.getHealthCurr()/ m.getHealthMax()) * 100);
+            System.out.println(m.getHealthCurr());
+        }
+        else
+        {
+            healthBar.setRect(1,1, 0, 0);
+        }
+        
         repaint();
     }
     

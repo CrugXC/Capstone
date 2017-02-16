@@ -53,6 +53,7 @@ public class MonsterSprite extends Sprite
     {
         healthCurr -= damage;
         info.put("healthCurr", healthCurr);
+        System.out.println(healthCurr <= 0?"Monster Dead":"Monster Alive");
         return healthCurr <= 0;
     }
     
