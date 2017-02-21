@@ -17,6 +17,7 @@ public class OverlordFrame extends JFrame
     private InventoryPanel invPanel;
     private PlayerStatsPanel statPanel;
     private MonsterPanel monstPanel;
+    private InformationPanel infPanel;
     private Player p;
     /**
      * Default constructor for objects of class OverlordFrame
@@ -28,6 +29,7 @@ public class OverlordFrame extends JFrame
         statPanel = new PlayerStatsPanel(p);
         monstPanel = new MonsterPanel(p);
         buttonPanel = new ButtonPanel(monstPanel);
+        infPanel = new InformationPanel();
         
         
         setLayout(new GridBagLayout());
@@ -52,13 +54,15 @@ public class OverlordFrame extends JFrame
         add(monstPanel, gbc);
 
         gbc.gridx = 2;
-        gbc.weightx = 0.1;
+        gbc.gridy = 1;
+        gbc.weightx = 0.3;
         add(statPanel, gbc);
+        
+        gbc.gridy = 0;
+        add(infPanel, gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 1;
-        gbc.gridwidth = 2;
-        gbc.weightx = 0.7;
         gbc.weighty = 0.5;
         gbc.fill = GridBagConstraints.BOTH;
         add(buttonPanel, gbc);

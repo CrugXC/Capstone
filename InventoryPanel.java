@@ -47,7 +47,7 @@ public class InventoryPanel extends JPanel
         mainInv = importMainInv;
         topInv = importTopInv;
                 
-        itemStats = new JLabel("");
+        itemStats = new JLabel("<html>No<br>Item<br>Selected</html>");
 
         //For loop taken from: http://stackoverflow.com/questions/2510159/can-i-add-a-component-to-a-specific-grid-cell-when-a-gridlayout-is-used
         rows = 8;
@@ -172,7 +172,7 @@ public class InventoryPanel extends JPanel
                 
                 selected.deactivate();
                 selected = null;
-                itemStats.setText("");
+                itemStats.setText("<html>No<br>Item<br>Selected</html>");
             }
         }
         
