@@ -27,10 +27,11 @@ public class ButtonPanel extends JPanel
     private GridLayout bttnLayout;
     
     private MonsterPanel m;
+    private Player p;
     /**
      * Default constructor for objects of class ButtonPanel
      */
-    public ButtonPanel(MonsterPanel m1)
+    public ButtonPanel(MonsterPanel m1, Player p1)
     {
         ActionListener listener = new ClickListener();
         spellBttn = new JButton("Spells");
@@ -48,6 +49,7 @@ public class ButtonPanel extends JPanel
         
         
         m = m1;
+        p = p1;
         
         
         bttnLayout = new GridLayout(2, 3, 20, 20);
@@ -76,6 +78,11 @@ public class ButtonPanel extends JPanel
                 System.out.println("test");
             }
             
+            else if (event.getActionCommand().equals("Rest"))
+            {
+                p.rest();
+                InformationPanel.update("\nYou travel to the local inn and rest for the night.");
+            }
             
             else
             {

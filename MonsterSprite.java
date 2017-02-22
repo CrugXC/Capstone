@@ -66,8 +66,10 @@ public class MonsterSprite extends Sprite
     public void attack(Player p)
     {
         AttackType att = attacks.get(r1.nextInt(attacks.size()));
-        System.out.println("Attack Found " + att);
+        
         int damage = att.attack();
+        InformationPanel.update("\n" + name + " attacked you with " + att + " for " + damage + " damage!");
+        
         p.takeDamage(damage);
         //p.takeDamage((attacks.get(r1.nextInt(info.size()))).attack());
         System.out.println("Damage Taken - Player");

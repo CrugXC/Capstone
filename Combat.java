@@ -67,6 +67,7 @@ public class Combat
             if(p.dead() || m.dead())
             {
                 this.endCombat();
+                InformationPanel.update("\nThe creature is dead!");
             }
             turn = false;
         }
@@ -82,6 +83,7 @@ public class Combat
             if(m.dead() || p.dead())
             {
                 this.endCombat();
+                InformationPanel.update("\nThe creature is dead!");
             }
             turn = true;
         }

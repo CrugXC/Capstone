@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.params=
 comment0.target=InformationPanel()
-numComments=1
+comment1.params=input
+comment1.target=void\ update(java.lang.String)
+numComments=2

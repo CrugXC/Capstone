@@ -117,10 +117,13 @@ public class Player
     {
         if(topInv.getItem(0) != null)
         {
-            monster.takeDamage(topInv.getItem(0).attack());
+            int damage = topInv.getItem(0).attack();
+            monster.takeDamage(damage);
+            InformationPanel.update("\nYou attack for " + damage + " damage!");
         }
         else
         {
+            InformationPanel.update("You have no weapon!");
         }
     }
     
@@ -132,6 +135,19 @@ public class Player
     public Inventory getTopInv()
     {
         return topInv;
+    }
+    
+    public int getAC()
+    {
+        if (topInv.getItem(1) instanceof Armor)
+        {
+            Armor armor = (Armor) topInv.getItem(1);
+            return armor.getAC();
+        }
+        else
+        {
+            return 0;
+        }
     }
     
     public int getMaxHealth()
@@ -157,5 +173,10 @@ public class Player
     public HashMap<String, Integer> getAttrib()
     {
         return attrib;
+    }
+    
+    public void rest()
+    {
+        healthCurr = healthMax;
     }
 }

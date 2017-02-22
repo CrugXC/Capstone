@@ -59,7 +59,7 @@ public class InventoryPanel extends JPanel
         
         mainInvPanel.setLayout(new GridLayout(rows, cols, 5, 5));
         
-        topInvPanel.setLayout(new GridLayout(1, 2, 50, 50));
+        topInvPanel.setLayout(new GridLayout(1, 4, 50, 50));
         topInvPanel.add(topInv.getSlot(0));
         topInvPanel.add(topInv.getSlot(1));
         
