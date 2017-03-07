@@ -69,7 +69,6 @@ public class Combat
                 this.endCombat();
                 InformationPanel.update("\nThe creature is dead!");
             }
-            turn = false;
         }
         else
         {
@@ -85,7 +84,6 @@ public class Combat
                 this.endCombat();
                 InformationPanel.update("\nThe creature is dead!");
             }
-            turn = true;
         }
         mp.update();
     }

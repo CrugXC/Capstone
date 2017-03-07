@@ -23,6 +23,9 @@ public class MonsterSprite extends Sprite
     private int healthCurr;
     private int healthMax;
     
+    private int ac;
+    
+    
     /**
      * Default constructor for objects of class Monster
      */
@@ -34,8 +37,10 @@ public class MonsterSprite extends Sprite
         attacks = importAttacks;
         
         healthMax = 1 + info.get("constitution");
-        
         healthCurr = healthMax;
+        
+        ac = 10;
+        
         r1 = new Random();
     }
     
@@ -59,20 +64,43 @@ public class MonsterSprite extends Sprite
     
     public boolean dead()
     {
-        int healthCurr = info.get("healthCurr");
         return healthCurr <= 0;
     }
     
     public void attack(Player p)
     {
+        int roll = r1.nextInt(21) + 1;
         AttackType att = attacks.get(r1.nextInt(attacks.size()));
-        
         int damage = att.attack();
-        InformationPanel.update("\n" + name + " attacked you with " + att + " for " + damage + " damage!");
         
-        p.takeDamage(damage);
-        //p.takeDamage((attacks.get(r1.nextInt(info.size()))).attack());
-        System.out.println("Damage Taken - Player");
+        if(roll == 1)
+            {
+                InformationPanel.update("\nCritical Failure!");
+            }
+            else if(roll == 20)
+            {
+                InformationPanel.update("\nNatural 20!");
+                p.takeDamage(damage);
+            }
+            else
+            {
+                roll += info.get("strength");
+                if(p.getAttacked(roll, damage))
+                {
+                    p.takeDamage(damage);
+                    InformationPanel.update("\n" + name + " attacked you with " + att + " for " + damage + " damage!");
+                }
+                else
+                {
+                    InformationPanel.update("\nThey miss!");
+                }
+            }
+    }
+    
+    public boolean getAttacked(int roll, int damage)
+    {
+        InformationPanel.update("\nYou roll a " + roll + "!");
+        return(roll >= ac);
     }
     
     public HashMap<String, Integer> getAttrib()

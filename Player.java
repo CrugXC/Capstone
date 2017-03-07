@@ -5,6 +5,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.awt.Rectangle;
 import java.io.IOException;
+import java.util.Random;
 /**
  * Write a description of class Player here.
  * 
@@ -24,7 +25,7 @@ public class Player
     private int healthCurr;
     private int healthMax;
     
-
+    private Random r1;
     
     /**
      * Default constructor for objects of class Player
@@ -34,6 +35,7 @@ public class Player
         mainInv = new Inventory(8, 5);
         topInv = new Inventory(1, 2);
         
+        r1 = new Random();
         
         BufferedImage weaponImg = null;
         try {
@@ -102,29 +104,59 @@ public class Player
         return level;
     }
     
+    public void attack(MonsterSprite m)
+    {
+        if(topInv.getItem(0) != null)
+        {
+            int roll = r1.nextInt(21) + 1;
+            int damage = topInv.getItem(0).attack();
+            
+            if(roll == 1)
+            {
+                InformationPanel.update("\nCritical Failure!");
+            }
+            else if(roll == 20)
+            {
+                InformationPanel.update("\nNatural 20!");
+                m.takeDamage(damage);
+                InformationPanel.update("\nYou attack for " + damage + " damage!");
+            }
+            else
+            {
+                roll += attrib.get("strength");
+                if(m.getAttacked(roll, damage))
+                {
+                    m.takeDamage(damage);
+                    InformationPanel.update("\nYou attack for " + damage + " damage!");
+                }
+                else
+                {
+                    InformationPanel.update("\nYou miss!");
+                }
+            }
+            
+        }
+        else
+        {
+            InformationPanel.update("\nYou have no weapon!");
+        }
+    }
+        
     public boolean takeDamage(int damage)
     {
         healthCurr -= damage;
         return healthCurr <= 0;
     }
     
+    public boolean getAttacked(int roll, int damage)
+    {
+        InformationPanel.update("\nThey roll a " + roll + "!");
+        return(roll >= this.getAC());
+    }
+    
     public boolean dead()
     {
         return healthCurr <= 0;
-    }
-    
-    public void attack(MonsterSprite monster)
-    {
-        if(topInv.getItem(0) != null)
-        {
-            int damage = topInv.getItem(0).attack();
-            monster.takeDamage(damage);
-            InformationPanel.update("\nYou attack for " + damage + " damage!");
-        }
-        else
-        {
-            InformationPanel.update("You have no weapon!");
-        }
     }
     
     public Inventory getMainInv()
