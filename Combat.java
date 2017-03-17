@@ -67,7 +67,7 @@ public class Combat
             if(p.dead() || m.dead())
             {
                 this.endCombat();
-                InformationPanel.update("\nThe creature is dead!");
+                InformationPanel.update("\n\nThe creature is dead!");
             }
         }
         else
@@ -82,7 +82,7 @@ public class Combat
             if(m.dead() || p.dead())
             {
                 this.endCombat();
-                InformationPanel.update("\nThe creature is dead!");
+                InformationPanel.update("\n\nThe creature is dead!");
             }
         }
         mp.update();

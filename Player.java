@@ -48,7 +48,7 @@ public class Player
         try {
             armorImg = ImageIO.read(new File("LeatherArmor.gif"));
         } catch (IOException e){}
-        topInv.addItem(new Armor(5, "Basic Leather Armor", Generator.hashMapInitializer(1,1,1,1,1,1), armorImg), 1);
+        topInv.addItem(new Armor(10, "Basic Leather Armor", Generator.hashMapInitializer(1,1,1,1,1,1), armorImg), 1);
         
         attrib = topInv.getAttrib();
         
@@ -113,13 +113,14 @@ public class Player
             
             if(roll == 1)
             {
+                InformationPanel.update("\n\nYou roll a 1!");
                 InformationPanel.update("\nCritical Failure!");
             }
             else if(roll == 20)
             {
-                InformationPanel.update("\nNatural 20!");
-                m.takeDamage(damage);
-                InformationPanel.update("\nYou attack for " + damage + " damage!");
+                InformationPanel.update("\n\nYou roll a Natural 20!");
+                m.takeDamage(damage*2);
+                InformationPanel.update("\nYou attack for " + damage*2 + " damage!");
             }
             else
             {
@@ -150,7 +151,7 @@ public class Player
     
     public boolean getAttacked(int roll, int damage)
     {
-        InformationPanel.update("\nThey roll a " + roll + "!");
+        InformationPanel.update("\n\nThey roll a " + roll + "!");
         return(roll >= this.getAC());
     }
     

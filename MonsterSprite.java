@@ -75,12 +75,14 @@ public class MonsterSprite extends Sprite
         
         if(roll == 1)
             {
+                InformationPanel.update("\n\nThey roll a 1!");
                 InformationPanel.update("\nCritical Failure!");
             }
             else if(roll == 20)
             {
-                InformationPanel.update("\nNatural 20!");
-                p.takeDamage(damage);
+                InformationPanel.update("\n\nThey roll a Natural 20!");
+                p.takeDamage(damage*2);
+                InformationPanel.update("\n" + name + " attacked you with " + att + " for " + (damage*2) + " damage!");
             }
             else
             {
@@ -99,7 +101,7 @@ public class MonsterSprite extends Sprite
     
     public boolean getAttacked(int roll, int damage)
     {
-        InformationPanel.update("\nYou roll a " + roll + "!");
+        InformationPanel.update("\n\nYou roll a " + roll + "!");
         return(roll >= ac);
     }
     
